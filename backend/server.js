@@ -14,8 +14,8 @@ const normalizePort = val => {
   return false;
 };
 
-// Retrieve the port from environment variables or default to 4000
-const port = normalizePort(process.env.PORT || '4000');
+// Retrieve the port from environment variables or default to 3000
+const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 // Function to handle specific listen errors with messages
