@@ -1,4 +1,4 @@
-<img src="https://github.com/mlhotellier/_backend_mon-vieux-grimoire.com/raw/main/head_readme.png" alt="MonVieuxGrimoire" style="width: 100%;">
+
 
 # Projet mon-vieux-grimoire.com - API Backend
 
