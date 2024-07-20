@@ -1,32 +1,32 @@
 /**
- * Function to calculate the average rating for each book when a rating is added, updated, or removed
- * @param {Array} ratings - Array of ratings, each element contains a grade and the ID of the user who gave it
- * @returns {number} The calculated average rating with two decimal places
+ * Fonction pour calculer la note moyenne pour chaque livre lorsqu'une note est ajoutée, mise à jour ou supprimée
+ * @param {Array} ratings - Tableau de notes, chaque élément contient une note et l'ID de l'utilisateur qui l'a donnée
+ * @returns {number} La note moyenne calculée avec deux décimales
  */
 const calculateAverageRating = (ratings) => {
-    // Sum of ratings
+    // Somme des notes
     const totalRating = ratings.reduce((acc, rating) => acc + rating.grade, 0);
-    // Calculation of the average
+    // Calcul de la moyenne
     const averageRating = totalRating / ratings.length;
-    // Returns the average with two decimal places
+    // Retourne la moyenne avec deux décimales
     return parseFloat(averageRating.toFixed(2));
 };
 
 /**
- * Function to replace and remove unwanted characters in uploaded file name
- * @param {string} str - The file name to be cleaned
- * @returns {string} The cleaned file name
+ * Fonction pour remplacer et supprimer les caractères indésirables dans le nom de fichier téléchargé
+ * @param {string} str - Le nom de fichier à nettoyer
+ * @returns {string} Le nom de fichier nettoyé
  */
 const cleanFileName = (str) => {
-    // Delete emojis
+    // Supprime les emojis
     str = str.replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, '');
-    // Replace special characters
+    // Remplace les caractères spéciaux
     str = str.normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "") // Accented characters
-        .replace(/[^\w\s.-]/g, "") // No letters, numbers, space, dash or point characters
-        .replace(/\s+/g, "") // '#'
-        .replace(/\s+/g, "_"); // Convert spaces to underscores
-    // Limit name to 99 characters
+        .replace(/[\u0300-\u036f]/g, "") // Caractères accentués
+        .replace(/[^\w\s.-]/g, "") // Pas de lettres, chiffres, espaces, tirets ou points
+        .replace(/\s+/g, "") // Supprime les espaces
+        .replace(/\s+/g, "_"); // Convertit les espaces en underscores
+    // Limite le nom à 99 caractères
     if (str.length > 99) {
         str = str.substring(0, 99);
     }
