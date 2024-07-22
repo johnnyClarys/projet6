@@ -9,6 +9,5 @@ app.set('port', port);
 const server = http.createServer(app);
 
 // Démarrer le serveur et écouter sur le port défini
-server.listen(port, () => {
-  console.log(`Écoute sur le port ${port}`);
-});
+
+server.listen(process.env.PORT || 3000);

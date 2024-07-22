@@ -37,11 +37,11 @@ app.use(corsConfig);
 app.use(express.json());
 
 // Routes pour les API
-app.use('/api/books', bookRoutes); // Routes pour les livres
-app.use('/api/auth', userRoutes);  // Routes pour l'authentification des utilisateurs
+app.use('./routes/book', bookRoutes); // Routes pour les livres
+app.use('./routes/user', userRoutes);  // Routes pour l'authentification des utilisateurs
 
 // Route pour servir les images statiques depuis le dossier 'images'
-app.use('/images', express.static(path.join(__dirname, 'images')));
+app.use('../src/images', express.static(path.join(__dirname, 'images')));
 
 // Exportation de l'application Express pour l'utiliser dans le serveur principal
 module.exports = app;
