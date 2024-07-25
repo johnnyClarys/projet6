@@ -1,4 +1,4 @@
-const http = require('http');
+const http = require('node:http');
 const app = require('./app');
 
 // Définir le port sur lequel le serveur va écouter
