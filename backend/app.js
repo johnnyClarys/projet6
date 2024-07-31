@@ -8,10 +8,7 @@ const userRoutes = require("./routes/user");
 mongoose
   .connect(
     "mongodb+srv://johnnyclarys:QlUxtZgtUXNPOVoU@cluster0.qdnfhr6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
+   
   )
   .then(() => console.log("Connexion à MongoDB réussie !"))
   .catch(() => console.log("Connexion à MongoDB échouée !"));
